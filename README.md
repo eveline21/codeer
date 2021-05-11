@@ -25,13 +25,22 @@ PS:
 
 # Tasks
 - A list endpoint is provided to get you started, the first task would be to get the list of Pokemons and visualize it on the pokemon.list.tsx page.
+    - Try to fetch the data first
+    - Once you have the data, try to add the antd table. Display the:
+        - id
+        - name
+        - type (this is an array of strings. Try to display it using tags)
+
 Here are some links that could help:
-    - [antd](https://ant.design/components/table) 
-    - [axios](https://github.com/axios/axios)
+ [antd](https://ant.design/components/table)
+ [axios](https://github.com/axios/axios)
+
 
 - Once we have the table, make it possible to click a row and navigate to the pokemon.detail page.
-On this page the detail information of a Pokemon should get fetch and displayed. This means a new endpoint on the server will have to be created that accepts an id.
+  On this page the detail information of a Pokemon should get fetch and displayed. This means a new endpoint on the server will have to be created that accepts an id.
   Since we don't have a database, the Pokemons are loaded form the JSON in an array. I suggest to look for the correct Pokemon in the array.
+  - Create a new findOne endpoint which accepts an id
+  - Search for the corresponding Pokemon in the array and return it
 
 ## Extra:
 - If you really want to show off, you could make it possible to create our own Pokemon by providing a form.
