@@ -26,8 +26,8 @@ PS:
 # Tasks
 - A list endpoint is provided to get you started, the first task would be to get the list of Pokemons and visualize it on the pokemon.list.tsx page.
 Here are some links that could help:
-    - https://ant.design/components/table/
-    - https://github.com/axios/axios
+    - [antd](https://ant.design/components/table) 
+    - [axios](https://github.com/axios/axios)
 
 - Once we have the table, make it possible to click a row and navigate to the pokemon.detail page.
 On this page the detail information of a Pokemon should get fetch and displayed. This means a new endpoint on the server will have to be created that accepts an id.
