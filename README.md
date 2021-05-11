@@ -29,7 +29,7 @@ PS:
     - Once you have the data, try to add the antd table. Display the:
         - id
         - name
-        - type (this is an array of strings. Try to display it using tags)
+        - type (this is an array of strings. Try to display it using [Tags](https://ant.design/components/tag/))
 
 Here are some links that could help:
  [antd](https://ant.design/components/table)
