@@ -1,4 +1,4 @@
-#Technical tryout
+# Technical tryout
 First of all, thank you for your interest in Codeer. We must be doing something good if you want to work with us ;)
 
 Second, this is a small test for us to get an understanding of your technical level. **Don't worry**, we are not looking for a senior developer.
@@ -6,10 +6,10 @@ We are looking for people that are eager to learn, not afraid of a challenge and
 
 We would like for you to try to complete below tasks as you see fit. To limit losing too much time, try to limit yourself to a maximum of 4 hours of work.
 
-#Introduction
+# Introduction
 For this test, we will be build a fullstack application to manage our very own PokeDex! For simplicity sake we won't be using a database but a json collection is available for in memory use.
 
-#Setup
+# Setup
 
 This project consists of a **frontend** and a **server** folder. The frontend is built using React and a UI component library Antd.
 For the server we use NestJs, a Node.js framework built on express.
@@ -22,7 +22,7 @@ PS:
 - Server on http://localhost:4000
 
 
-#Tasks
+# Tasks
 - A list endpoint is provided to get you started, the first task would be to get the list of Pokemons and visualize it on the pokemon.list.tsx page.
 Here are some links that could help:
     - https://ant.design/components/table/
@@ -32,7 +32,7 @@ Here are some links that could help:
 On this page the detail information of a Pokemon should get fetch and displayed. This means a new endpoint on the server will have to be created that accepts an id.
   Since we don't have a database, the Pokemons are loaded form the JSON in an array. I suggest to look for the correct Pokemon in the array.
 
-###Extra:
+## Extra:
 - If you really want to show off, you could make it possible to create our own Pokemon by providing a form.
 - Make it possible to delete Pokemons
 - Show of your CSS skills by making it a beauty
