@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { PokemonDto } from '../dto/pokemon.dto';
 import { PokemonService } from '../services';
 
@@ -11,8 +11,8 @@ export class PokemonController {
         return this.pokemonService.findAll();
     }
 
-    // @Get(':id')
-    // findOne(@Param('id') id: string): PokemonDto {
-    //     return this.pokemonService.findOne(id);
-    // }
+    @Get(':id')
+    findOne(@Param('id') id: string): PokemonDto {
+        return this.pokemonService.findOne(id);
+    }
 }

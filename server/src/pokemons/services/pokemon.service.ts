@@ -15,7 +15,7 @@ export class PokemonService {
     }
 
     // TODO finish this endpoint
-    // findOne(id: string): PokemonDto {
-    // return ...
-    // }
+    findOne(id: string): PokemonDto {
+        return this.pokemons.find((pokemon) => pokemon.id.toString() == id);
+    }
 }
