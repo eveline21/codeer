@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Page } from "../components/page";
 import { Pokemon } from "../models/pokemon.model";
 import { Table, Tag } from 'antd'
@@ -10,7 +10,8 @@ import { ColumnsType } from "antd/lib/table";
 export const PokemonList: FC = () => {
   // Add here a table with the data from the server
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-
+  const history = useHistory();
+  
   useEffect(() => {
     getPokemons()
         .then(data => setPokemons(data))
@@ -40,7 +41,12 @@ export const PokemonList: FC = () => {
   ]
   return (
     <Page>
-      <Table<Pokemon> columns={columns} dataSource={pokemons} rowKey={record => record.id}/>
+      <Table<Pokemon> columns={columns} dataSource={pokemons} rowKey={record => record.id}
+      onRow={(record) => {
+        return {
+          onClick: event => {history.push('/' + record.id);}
+        }
+      }}/>
     </Page>
   );
 };

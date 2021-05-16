@@ -11,6 +11,10 @@ export const getPokemons= async function(): Promise<Pokemon[]> {
         })
 };
 
-export const getPokemon= async function(id: string) {
-
+export const getPokemon= async function(id: string): Promise<Pokemon> {
+    return axios.get(`${BASE_URL}/pokemons/${id}`)
+        .then(resp => resp.data)
+        .catch((err) => {
+            throw err
+        })
 };
