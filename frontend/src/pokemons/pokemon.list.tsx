@@ -1,11 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Page } from "../components/page";
 import { Pokemon } from "../models/pokemon.model";
-import { Table, Tag } from 'antd'
+import { Table, Tag, Button } from 'antd'
 
 import { getPokemons } from "../services/pokemon-service"
 import { ColumnsType } from "antd/lib/table";
+import { PlusOutlined } from "@ant-design/icons"
 
 export const PokemonList: FC = () => {
   // Add here a table with the data from the server
@@ -41,6 +42,9 @@ export const PokemonList: FC = () => {
   ]
   return (
     <Page>
+      <Button type="primary" shape="round" icon={<PlusOutlined />} size="large">
+          Add pokemon
+      </Button>
       <Table<Pokemon> columns={columns} dataSource={pokemons} rowKey={record => record.id}
       onRow={(record) => {
         return {
