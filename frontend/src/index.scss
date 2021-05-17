@@ -12,14 +12,14 @@ code {
     monospace;
 }
 
-Button {
+.ant-btn-primary {
   margin: 1em;
-  background: "#066FBD";
-  border-color: "#001529";
-  color: "#FFCB00" !important;
+  background: #066FBD;
+  border: #001529;
   font-weight: bold;
-}
-
-.button-container {
-
+  color: #FFCB00;
+  &:hover {
+    color: #FFCB00;
+    background: adjust-color(#066FBD, $lightness: 5%);
+  }
 }

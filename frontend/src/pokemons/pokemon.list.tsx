@@ -4,14 +4,15 @@ import { Page } from "../components/page";
 import { Pokemon } from "../models/pokemon.model";
 import { Table, Tag, Button } from 'antd'
 
-import { getPokemons } from "../services/pokemon-service"
+import { getPokemons, createPokemon } from "../services/pokemon-service"
 import { ColumnsType } from "antd/lib/table";
 import { PlusOutlined } from "@ant-design/icons"
+import { PokemonForm } from "../components/form/pokemon.form"
 
 export const PokemonList: FC = () => {
-  // Add here a table with the data from the server
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const history = useHistory();
+  const [showAdd, setShowAdd] = useState<boolean>(false);
   
   useEffect(() => {
     getPokemons()
@@ -19,6 +20,15 @@ export const PokemonList: FC = () => {
         .catch(err => console.log(err))
     
   }, []);
+
+  const onCreate = (values: any) => {
+    createPokemon(values)
+      .then(resp => {
+        setPokemons([...pokemons, resp.data])
+      })
+      .catch(err => console.log(err));
+    setShowAdd(false);
+  };
 
   const columns: ColumnsType<Pokemon> = [
     { title: "ID", dataIndex: "id"},
@@ -40,11 +50,13 @@ export const PokemonList: FC = () => {
       )
     }
   ]
+
   return (
     <Page>
-      <Button type="primary" shape="round" icon={<PlusOutlined />} size="large">
+      <Button type="primary" shape="round" icon={<PlusOutlined />} size="large" onClick={() => setShowAdd(!showAdd)}>
           Add pokemon
       </Button>
+      <PokemonForm visible={showAdd} onCreate={onCreate} onCancel={() => {setShowAdd(false);}}></PokemonForm>
       <Table<Pokemon> columns={columns} dataSource={pokemons} rowKey={record => record.id}
       onRow={(record) => {
         return {

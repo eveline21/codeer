@@ -18,3 +18,7 @@ export const getPokemon= async function(id: string): Promise<Pokemon> {
             throw err
         })
 };
+
+export const createPokemon = async function(pokemon: any) {
+    return axios.post(`${BASE_URL}/pokemons`, pokemon)
+}

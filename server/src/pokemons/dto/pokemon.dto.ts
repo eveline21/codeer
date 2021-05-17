@@ -1,4 +1,4 @@
-class PokemonBase {
+export class PokemonBase {
     public HP: number;
     public Attack: number;
     public Defense: number;

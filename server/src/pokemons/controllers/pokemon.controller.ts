@@ -1,5 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { PokemonDto } from '../dto/pokemon.dto';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { CreatePokemonDto } from '../dto/create.pokemon.dto';
+import { PokemonBase, PokemonDto } from '../dto/pokemon.dto';
 import { PokemonService } from '../services';
 
 @Controller('pokemons')
@@ -14,5 +15,21 @@ export class PokemonController {
     @Get(':id')
     findOne(@Param('id') id: string): PokemonDto {
         return this.pokemonService.findOne(id);
+    }
+
+    @Post()
+    create(@Body() createPokemonDto: CreatePokemonDto) {
+        console.log(createPokemonDto);
+        const pokemon = new PokemonDto();
+        pokemon.name = createPokemonDto.name;
+        pokemon.type = createPokemonDto.type;
+        pokemon.base = new PokemonBase();
+        pokemon.base.HP = createPokemonDto.HP;
+        pokemon.base.Attack = createPokemonDto.Attack;
+        pokemon.base.Defense = createPokemonDto.Defense;
+        pokemon.base['Sp. Attack'] = createPokemonDto['Sp. Attack'];
+        pokemon.base['Sp. Defense'] = createPokemonDto['Sp. Defense'];
+        pokemon.base.Speed = createPokemonDto.Speed;
+        return this.pokemonService.create(pokemon);
     }
 }
