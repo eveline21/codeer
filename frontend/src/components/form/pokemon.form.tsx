@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react";
+import { FC } from "react";
 import "./pokemon.form.scss";
-import { Form, Input, Button, InputNumber, Select, Tag, Modal } from "antd";
+import { Form, Input, InputNumber, Select, Tag, Modal } from "antd";
 import { Pokemon } from "../../models/pokemon.model";
 
 interface newPokemon {

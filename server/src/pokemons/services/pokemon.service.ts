@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import * as pokemonJson from '../data/pokemons.json';
-import { CreatePokemonDto } from '../dto/create.pokemon.dto';
 import { PokemonDto } from '../dto/pokemon.dto';
 
 @Injectable()

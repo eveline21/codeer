@@ -22,4 +22,9 @@ code {
     color: #FFCB00;
     background: adjust-color(#066FBD, $lightness: 5%);
   }
+  &:focus {
+    color: #FFCB00;
+    background: #066FBD;
+    border: #001529;
+  }
 }
