@@ -4,9 +4,9 @@ import { Page } from "../components/page";
 import { Pokemon } from "../models/pokemon.model";
 import { Table, Tag, Button } from 'antd'
 
-import { getPokemons, createPokemon } from "../services/pokemon-service"
+import { getPokemons, createPokemon, deletePokemon } from "../services/pokemon-service"
 import { ColumnsType } from "antd/lib/table";
-import { PlusOutlined } from "@ant-design/icons"
+import { PlusOutlined, DeleteFilled } from "@ant-design/icons"
 import { PokemonForm } from "../components/form/pokemon.form"
 
 export const PokemonList: FC = () => {
@@ -30,7 +30,27 @@ export const PokemonList: FC = () => {
     setShowAdd(false);
   };
 
+  function onDelete (id: number) {
+    deletePokemon(id)
+    .then(data => {
+      setPokemons(pokemons.filter(pokemon => pokemon.id !== data.id));
+    })
+    .catch(err => console.log(err))
+  }
+  
+
   const columns: ColumnsType<Pokemon> = [
+    {
+      title: '',
+      key: 'action',
+      width: "20px",
+      render: (text, record) => (
+        <DeleteFilled onClick={(e)=> {
+          e.stopPropagation(); 
+          onDelete(record.id);
+        }}/>
+      )
+    },
     { title: "ID", dataIndex: "id"},
     { title: "Name", dataIndex: "name"},
     { title: "Type",

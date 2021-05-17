@@ -24,4 +24,9 @@ export class PokemonService {
         this.pokemons.push(pokemon);
         return pokemon;
     }
+
+    remove(id: string): PokemonDto {
+        const index = this.pokemons.findIndex((pokemon) => pokemon.id.toString() == id);
+        return this.pokemons.splice(index, 1)[0];
+    }
 }
