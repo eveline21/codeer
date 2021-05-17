@@ -14,7 +14,7 @@ export const Page: FC<Props> = ({ children }) => {
             <Header>
                 <Link to="/"><img src={logo} style={{ width: '150px' }} className="App-logo" alt="logo" /></Link>
             </Header>
-            <Content style={{ height: "100%" }}>{children}</Content>
+            <Content style={{ height: "100%", margin: "2em" }}>{children}</Content>
         </Layout>
     );
 };
