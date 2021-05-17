@@ -1,0 +1,11 @@
+.inline {
+    display: flex;
+    & > * {
+        display: flex;
+    }
+    & > .ant-form-item {
+        margin-right: 1em;
+    }
+}
+
+  

@@ -85,36 +85,47 @@ export const PokemonForm: FC<CollectionCreateFormProps> = ({visible, onCreate, o
             options={options}
           />
         </Form.Item>
-        <Form.Item label="HP" name="HP"
-          rules={[{ required: true, message: 'HP is required' }]}
-        >
-          <InputNumber placeholder="35" min={0}/>
-        </Form.Item>
-        <Form.Item label="Attack" name="Attack"
-          rules={[{ required: true, message: 'Attack is required' }]}
-        >
-          <InputNumber placeholder="55" min={0}/>
-        </Form.Item>
-        <Form.Item label="Defense" name="Defense"
-          rules={[{ required: true, message: 'Defense is required' }]} 
-        >
-          <InputNumber placeholder="30" min={0}/>
-        </Form.Item>
-        <Form.Item label="Sp. Attack" name="Sp. Attack"
-          rules={[{ required: true, message: 'Sp. Attack is required' }]}
-        >
-          <InputNumber placeholder="50"  min={0}/>
-        </Form.Item>
-        <Form.Item label="Sp. Defense" name="Sp. Defense"
-          rules={[{ required: true, message: 'Sp. Defense is required' }]}
-        >
-          <InputNumber placeholder="40" min={0}/>
-        </Form.Item>
-        <Form.Item label="Speed" name="Speed"
-          rules={[{ required: true, message: 'Speed is required' }]}
-        >
-          <InputNumber placeholder="90" min={0}/>
-        </Form.Item>
+
+        <div className="inline">
+          <Form.Item label="HP" name="HP"
+            rules={[{ required: true, message: 'HP is required' }]}
+          >
+            <InputNumber placeholder="35" min={0}/>
+          </Form.Item>          
+          <Form.Item label="Speed" name="Speed"
+            rules={[{ required: true, message: 'Speed is required' }]}
+          >
+            <InputNumber placeholder="90" min={0}/>
+          </Form.Item>
+
+        </div>
+        <div className="inline">
+          <Form.Item label="Attack" name="Attack"
+            rules={[{ required: true, message: 'Attack is required' }]}
+          >
+            <InputNumber placeholder="55" min={0}/>
+          </Form.Item>
+
+          <Form.Item label="Sp. Attack" name="Sp. Attack"
+            rules={[{ required: true, message: 'Sp. Attack is required' }]}
+          >
+            <InputNumber placeholder="50"  min={0}/>
+          </Form.Item>
+        </div>
+
+        <div className="inline">
+          <Form.Item label="Defense" name="Defense"
+            rules={[{ required: true, message: 'Defense is required' }]} 
+          >
+            <InputNumber placeholder="30" min={0}/>
+          </Form.Item>
+          <Form.Item label="Sp. Defense" name="Sp. Defense"
+            rules={[{ required: true, message: 'Sp. Defense is required' }]}
+          >
+            <InputNumber placeholder="40" min={0}/>
+          </Form.Item>
+        </div>
+
       </Form>
     </Modal>
   );
